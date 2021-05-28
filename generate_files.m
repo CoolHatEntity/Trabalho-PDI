@@ -2,7 +2,6 @@ function output = generate_files(folderName, img)
 I = imread(img);
 
 origin = cd; 
-addpath(origin);
 
 %Create a new folder
 mkdir(folderName);
@@ -16,9 +15,8 @@ imwrite( HSV(:,:,1), "layer1.png");
 imwrite( HSV(:,:,2), "layer2.png");
 imwrite( HSV(:,:,3), "layer3.png");
 
-reduced = floor(Quantiz(img, 3));
 addpath(origin);
-
+reduced = floor(Quantiz(img, 3));
 
 imwrite(reduced(:,:,1), "reduced_layer1.png");
 imwrite(reduced(:,:,2), "reduced_layer2.png");
